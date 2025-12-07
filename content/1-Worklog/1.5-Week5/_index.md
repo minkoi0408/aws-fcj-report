@@ -1,34 +1,61 @@
-
 ---
-title: "Worklog Week 5"
-weight: 5
+title: "Week 5 Worklog"
+weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
+{{% notice warning %}}
+⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
+{{% /notice %}}
+
 
 ### Week 5 Objectives:
 
-* **RDS Role:** Clearly understand the role and benefits of the **Amazon RDS** service compared to self-managing databases on EC2.
-* **Core Operations:** Be proficient in creating and connecting to a DB Instance (e.g., MySQL or PostgreSQL).
-* **Key Features Mastery:** Master critical features: **Multi-AZ** (High Availability), **Read Replicas** (Read Scaling), and **Snapshot/Backup** procedures.
-* **Network Security:** Practice managing network security for the DB Instance through Security Groups.
+* Learn about container services on AWS.
+* Understand ECS and basic Docker concepts.
+* Study Load Balancer for distributing traffic.
 
-### Planned Tasks for the Week:
+### Tasks to be carried out this week:
+| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Introduction to Infrastructure as Code (IaC) concepts and benefits compared to manual deployment <br> - Get familiar with AWS CloudFormation: template, stack, parameter                                                                                                   | 06/10/2025 | 06/10/2025      | AWS Journey |
+| 3   | - Write CloudFormation template to deploy S3 bucket and EC2 instance <br> - Create, update, and delete stack via AWS Console                                              | 07/10/2025 | 07/10/2025      | AWS Journey |
+| 4   | - Introduction to AWS CDK (Cloud Development Kit) <br> - Install AWS CDK, create CDK project using Python or TypeScript <br> - Write CDK code to deploy EC2 instance | 08/10/2025 | 08/10/2025      | AWS Journey |
+| 5   | - Introduction to AWS Systems Manager (SSM) and key features: Parameter Store, Run Command, Automation, Session Manager <br> - Create Parameter Store to store configuration variables   <br>                            | 09/10/2025 | 09/10/2025      | AWS Journey |
+| 6   | - Practice creating Automation Document in SSM to automatically start/stop EC2 <br> - Test Session Manager (access EC2 without SSH key) <br> - Week summary: IaC + SSM demo                                                                                     | 10/10/2025 | 10/10/2025      | AWS Journey |
 
-| Day | Task/Activity Focus | Start Date | Completion Date | Resource Material |
-| :-- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :----------- | :-------------- | :---------------------------------------- |
-| **Mon** | * Review and comprehend **Amazon RDS Architecture** (DB Instance, Engine, Master Username/Password, DB Security Group). <br> * Compare RDS with self-managed databases on EC2. <br> * **Hands-on Practice:** Launch a DB Instance (Free Tier) within the VPC created in Week 3 (selecting a Private Subnet). | 06/10/2025 | 06/10/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Tue** | * Investigate connection methods and network security for RDS. <br> * **Hands-on Practice:** <br>&emsp; + Configure the RDS **Security Group** to allow access *only* from the **EC2 Instance's Security Group**. <br>&emsp; + Use a Client tool or EC2 to connect and create a basic table. | 07/10/2025 | 07/10/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Wed** | * Study **Multi-AZ Deployment** for ensuring High Availability (HA). <br> * Learn about **Automated Backups** and **DB Snapshots** (manual backups). <br> * **Hands-on Practice:** Enable Multi-AZ for the Instance and create a manual DB Snapshot. | 08/10/2025 | 08/10/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Thu** | * Explore **Read Replicas** to offload read traffic from the DB Master. <br> * **Hands-on Practice:** <br>&emsp; + Create a Read Replica for the primary DB Instance. <br>&emsp; + Simulate connecting an application to the Read Replica for read scaling. <br>&emsp; + Research the process of Promoting a Read Replica to a Standalone DB. | 09/10/2025 | 09/10/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Fri** | * **Cleanup and Optimization:** <br> * **Hands-on Practice:** <br>&emsp; + Delete the Read Replica. <br>&emsp; + Delete the primary DB Instance (Note: Uncheck 'Create Final Snapshot' if not needed). <br>&emsp; + Clean up all related Snapshots and Security Groups. | 10/10/2025 | 10/10/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
 
 ### Week 5 Achievements:
 
-* **RDS Management:** Clearly understood the benefits of RDS and are proficient in creating, configuring, and connecting to a DB Instance.
-* **Connection Security:** Mastered using Security Groups to restrict database access *only* to specified resources (like EC2), ensuring strong network layer security.
-* **High Availability (HA):** Understood and successfully implemented **Multi-AZ** deployment to protect the database against Availability Zone failures.
-* **Scalability:** Understood and practiced creating **Read Replicas** to optimize read performance and reduce load on the DB Master.
-* **Backup & Recovery:** Grasped the procedure for creating **DB Snapshots** and how RDS automatically performs **Automated Backups** for data recovery.
+* Learned about containerization and Docker:
+    * Understood benefits of containers
+    * Learned difference between containers and VMs
+    * Studied Docker images and containers
 
----
+* Practiced with Docker locally:
+    * Installed Docker Desktop
+    * Pulled images from Docker Hub
+    * Ran basic containers:
+        * `docker pull nginx`
+        * `docker run -d -p 80:80 nginx`
+    * Learned basic Docker commands
+
+* Understood Amazon ECS:
+    * Learned ECS as managed container service
+    * Studied ECS components:
+        * Clusters
+        * Task definitions
+        * Services
+    * Compared Fargate (serverless) vs EC2 launch types
+
+* Deployed application on ECS:
+    * Created ECS cluster
+    * Created task definition with simple web app
+    * Deployed service on Fargate
+    * Viewed container logs in CloudWatch
+
+* Worked with Application Load Balancer:
+    * Created ALB for distributing traffic
+    * Configured target groups
+    * Integrated ALB with ECS service
+    * Tested load balancing with multiple tasks

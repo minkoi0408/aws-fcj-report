@@ -1,30 +1,59 @@
 ---
 title: "Worklog Tuần 10"
-weight: 10
+date: "`r Sys.Date()`"
+weight: 2
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
+{{% notice warning %}}
+⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
+{{% /notice %}}
 
-### Mục tiêu Tuần 10:
 
-* **Hàng đợi Tin nhắn:** Hiểu rõ vai trò và cách thức hoạt động của dịch vụ hàng đợi tin nhắn **Amazon Simple Queue Service (SQS)** (Standard & FIFO).
-* **Mô hình Pub/Sub:** Nắm vững kiến trúc **Publish/Subscribe** với dịch vụ thông báo **Amazon Simple Notification Service (SNS)**.
-* **Điều phối Luồng công việc:** Thành thạo việc tạo và cấu hình các máy trạng thái **AWS Step Functions** để điều phối các dịch vụ AWS.
-* **Thực hành Tích hợp:** Xây dựng một quy trình làm việc phi đồng bộ sử dụng SQS, SNS và Lambda.
+### Mục tiêu tuần 10:
 
-### Kế hoạch Triển khai trong Tuần:
+* Kết nối, làm quen với các thành viên trong First Cloud Journey.
+* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
 
-| Thứ | Hoạt động Trọng tâm | Ngày Bắt đầu | Ngày Hoàn thành | Tài liệu Tham khảo |
-| :-- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------- | :-------------- | :---------------------------------------- |
-| **Hai** | * Đọc và hiểu kiến trúc **Amazon SQS** (Hàng đợi tin nhắn) và sự khác biệt giữa Standard Queue và FIFO Queue. <br> * **Thực hành:** Tạo một SQS Standard Queue, gửi và nhận tin nhắn thủ công qua Console. | 10/11/2025 | 10/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
-| **Ba** | * Tìm hiểu về dịch vụ thông báo **Amazon SNS** (Topic, Subscriber) và mô hình Pub/Sub. <br> * **Thực hành:** <br>&emsp; + Tạo một SNS Topic. <br>&emsp; + Tạo SQS Queue và hàm Lambda (từ tuần 8) làm Subscriber cho Topic. <br>&emsp; + Gửi tin nhắn đến Topic và kiểm tra sự phân phối đến các Subscriber. | 11/11/2025 | 11/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
-| **Tư** | * Tìm hiểu về **AWS Step Functions** (State Machine, Task State, Choice State). <br> * **Thực hành:** <br>&emsp; + Tạo một hàm Lambda mới (ví dụ: `ProcessStep1`). <br>&emsp; + Tạo một State Machine đơn giản (chỉ có một bước Task) để điều phối và gọi hàm Lambda này. | 12/11/2025 | 12/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
-| **Năm** | * Tìm hiểu về cách **Step Functions** điều phối luồng logic phức tạp (Sequence, Choice, Parallel). <br> * **Thực hành:** Mở rộng State Machine đã tạo: <br>&emsp; + Thêm một bước `Choice` dựa trên kết quả đầu vào. <br>&emsp; + Tích hợp SQS (ví dụ: gửi tin nhắn vào hàng đợi nếu luồng đi theo một nhánh nhất định). | 13/11/2025 | 13/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
-| **Sáu** | * **Dọn dẹp Tài nguyên & Tích hợp Tổng quan:** <br> * **Thực hành:** <br>&emsp; + Xóa State Machine, SQS Queue, SNS Topic. <br>&emsp; + Ôn tập về cách các dịch vụ này (SQS, SNS, Step Functions) giải quyết vấn đề giao tiếp phi đồng bộ và decoupling (tách rời) trong kiến trúc ứng dụng. | 14/11/2025 | 14/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc cần triển khai trong tuần này:
+| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
+| 2   | - Tổng quan về AI/ML trên AWS <br> - Tìm hiểu các dịch vụ hỗ trợ ML: SageMaker, Rekognition, Comprehend, Kendra, Translate, Polly                                                                                             | 10/11/2025   | 10/11/2025      | AWS Journey |
+| 3   | - Thực hành với Amazon SageMaker: <br>&emsp; + Tạo Notebook Instance <br>&emsp; + Train các mô hình đơn giản (Linear Regression / Image Classification) <br>&emsp; + Deploy endpoint và test predictions                                            | 11/11/2025   | 11/11/2025      | AWS Journey |
+| 4   | - Làm quen với Amazon Rekognition <br> - Demo nhận dạng khuôn mặt và đối tượng trong ảnh/video <br> - Tích hợp Rekognition API vào ứng dụng web nhỏ | 12/11/2025   | 12/11/2025      | AWS Journey |
+| 5   | - Thực hành Amazon Comprehend (xử lý ngôn ngữ tự nhiên) <br> - Thử nghiệm Amazon Kendra (tìm kiếm thông minh theo ngữ cảnh) <br> - So sánh ưu điểm và hạn chế của từng dịch vụ   <br>                  | 13/11/2025   | 13/11/2025      | AWS Journey |
+| 6   | - Tổng kết kiến thức Tuần 10: <br>&emsp; + Quy trình phát triển mô hình AI/ML trên AWS <br>&emsp; + Ứng dụng thực tế của AI/ML trong doanh nghiệp <br>&emsp; + Viết báo cáo kết quả thực hành và hướng mở rộng                                                                                         | 14/11/2025   | 14/11/2025      | AWS Journey |
 
-### Kết quả Đạt được Tuần 10:
 
-* **Hàng đợi tin nhắn:** Hiểu rõ vai trò của SQS trong việc **decoupling** và **làm mềm tải** (buffering) ứng dụng. Thành thạo việc gửi/nhận tin nhắn qua SQS.
-* **Mô hình Pub/Sub:** Nắm được cơ chế **SNS** để phân phối tin nhắn tới nhiều người đăng ký (Subscriber) một cách hiệu quả và đáng tin cậy.
-* **Điều phối Luồng công việc:** Hiểu rõ cách **Step Functions** giúp điều phối các dịch vụ AWS khác thành một quy trình làm việc có tổ chức, có khả năng quản lý lỗi và dễ giám sát.
-* **Xây dựng Hệ thống Phi đồng bộ:** Có khả năng thiết kế kiến trúc ứng dụng sử dụng các dịch vụ tích hợp này để tăng tính linh hoạt và khả năng mở rộng.
+### Kết quả đạt được tuần 10:
+
+* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản:
+    * Compute
+    * Storage
+    * Networking
+    * Database
+    * ...
+
+* Đã tạo và cấu hình AWS Free Tier account thành công.
+
+* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+
+* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
+    * Access Key
+    * Secret Key
+    * Region mặc định
+    * ...
+
+* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+
+    * Kiểm tra thông tin tài khoản & cấu hình
+    * Lấy danh sách region
+    * Xem dịch vụ EC2
+    * Tạo và quản lý key pair
+    * Kiểm tra thông tin dịch vụ đang chạy
+    * ...
+
+* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
+* ...
+
+

@@ -1,31 +1,117 @@
 ---
 title: "Worklog Tuần 4"
+date: "`r Sys.Date()`"
 weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
 
-### Mục tiêu Tuần 4:
+### Mục tiêu tuần 4:
 
-* **S3 Cơ bản:** Hiểu rõ vai trò, kiến trúc và tính bền vững (Durability) của dịch vụ **Amazon S3** (Simple Storage Service).
-* **Quản lý Bucket & Bảo mật:** Thành thạo việc tạo, quản lý **Bucket**, và áp dụng các chính sách bảo mật như **Bucket Policy**.
-* **Tối ưu Lưu trữ:** Nắm vững các lớp lưu trữ của S3 (**Standard, IA, Glacier**) và cách sử dụng **Lifecycle Rules** để tự động tối ưu chi phí.
-* **Ứng dụng:** Thực hành triển khai một trang web tĩnh (**Static Website Hosting**) trên S3.
+* Thành thạo các chiến lược di chuyển lên cloud và hệ sinh thái dịch vụ migration của AWS.
+* Triển khai quy trình migration cơ sở dữ liệu sử dụng AWS Database Migration Service.
+* Thiết kế và triển khai kiến trúc disaster recovery toàn diện.
+* Phát triển kế hoạch liên tục kinh doanh với giải pháp backup và recovery tự động.
 
-### Kế hoạch Triển khai trong Tuần:
+### Các công việc cần triển khai trong tuần này:
+| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
+| 2   | - Tìm hiểu các khái niệm Migration (Lift & Shift, Replatform, Refactor) <br> - Giới thiệu AWS Database Migration Service (DMS) | 29/09/2025   | 29/09/2025      | AWS Journey |
+| 3   | - Thực hành tạo Replication Instance trong DMS <br> - Cấu hình source data (on-premise) và target (RDS) <br> - Thực hiện test migration dữ liệu | 30/09/2025   | 30/09/2025      | AWS Journey |
+| 4   | - Giới thiệu Elastic Disaster Recovery (EDR) <br> - Tìm hiểu cách thiết lập replication server và recovery instance | 01/10/2025   | 01/10/2025      | AWS Journey |
+| 5   | - Thực hành mô phỏng sự cố: tắt EC2 chính và khởi động recovery instance từ EDR <br> - Đánh giá thời gian phục hồi (RTO/RPO) | 02/10/2025   | 02/10/2025      | AWS Journey |
+| 6   | - Tạo kế hoạch Disaster Recovery cơ bản (backup, restore, failover) <br> - Viết tài liệu tổng kết quy trình Migration + DR <br> - Tổng kết kiến thức Tuần 4 | 03/10/2025   | 03/10/2025      | AWS Journey |
 
-| Thứ | Hoạt động Trọng tâm | Ngày Bắt đầu | Ngày Hoàn thành | Tài liệu Tham khảo |
-| :-- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------- | :-------------- | :---------------------------------------- |
-| **Hai** | * Đọc và hiểu kiến trúc cơ bản của **Amazon S3** (Object, Key, Bucket, Region). <br> * Tìm hiểu các tính năng bảo mật: Block Public Access, Access Control List (ACL). <br> * **Thực hành:** Tạo S3 Bucket mới và tùy chỉnh cài đặt Block Public Access. | 29/09/2025 | 29/09/2025 | <https://cloudjourney.awsstudygroup.com/> |
-| **Ba** | * Tìm hiểu về các **Lớp Lưu Trữ (Storage Classes)** của S3 (Standard, Standard-IA, One Zone-IA, Glacier, Deep Archive). <br> * Tìm hiểu về **Lifecycle Rules** để chuyển đổi tự động giữa các lớp lưu trữ. <br> * **Thực hành:** Cấu hình Lifecycle Rule cho Bucket, chuyển đổi đối tượng cũ sang Standard-IA. | 30/09/2025 | 30/09/2025 | <https://cloudjourney.awsstudygroup.com/> |
-| **Tư** | * Tìm hiểu về tính năng **Versioning** (Quản lý phiên bản) và quy trình khôi phục đối tượng. <br> * Tìm hiểu về **Bucket Policy** để quản lý quyền truy cập tập trung. <br> * **Thực hành:** Bật Versioning cho Bucket và thử xóa/khôi phục một đối tượng. | 01/10/2025 | 01/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
-| **Năm** | * Tìm hiểu về tính năng **Static Website Hosting** trên S3. <br> * **Thực hành:** <br>&emsp; + Tải lên file HTML/CSS/JS (Index.html & Error.html). <br>&emsp; + Bật Static Website Hosting và thiết lập Bucket Policy cho phép truy cập công cộng. <br>&emsp; + Truy cập trang web thông qua Endpoint công cộng của S3. | 02/10/2025 | 02/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
-| **Sáu** | * **Dọn dẹp và Ôn tập S3 CLI:** <br> * **Thực hành:** <br>&emsp; + Dùng **AWS CLI** để upload/download/sync dữ liệu với S3 (`aws s3 cp`, `aws s3 sync`). <br>&emsp; + **Dọn dẹp tài nguyên:** Tắt Versioning, xóa tất cả các đối tượng (bao gồm các phiên bản cũ), sau đó xóa Bucket. | 03/10/2025 | 03/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Kết quả Đạt được Tuần 4:
+### Kết quả đạt được tuần 4:
 
-* **Quản lý S3 Toàn diện:** Đã hiểu rõ và tự tay tạo, cấu hình, và quản lý các S3 Bucket. Nắm được vai trò của **Block Public Access** và **ACL**.
-* **Tối ưu Chi phí Lưu trữ:** Nắm vững các **Storage Classes** của S3 và biết cách sử dụng **Lifecycle Rules** để tự động chuyển dữ liệu sang các lớp lưu trữ ít tốn kém hơn theo thời gian.
-* **Bảo mật & Quản lý Dữ liệu:** Thực hành thành công việc bật/tắt **Versioning** và áp dụng **Bucket Policy** để kiểm soát quyền truy cập công cộng và của IAM User.
-* **Ứng dụng Thực tế:** Triển khai thành công một trang web tĩnh trên S3 và truy cập được qua Endpoint công cộng.
-* **Thao tác CLI:** Thành thạo sử dụng AWS CLI để quản lý dữ liệu trên S3 (upload, download, sync) một cách hiệu quả.
+* Thành thạo AWS cloud migration framework và phương pháp luận:
+    * Hiểu 7 chiến lược migration 7R: Retire, Retain, Rehost, Relocate, Repurchase, Replatform, Refactor
+    * Học khi nào áp dụng từng chiến lược dựa trên yêu cầu kinh doanh
+    * Khám phá AWS Migration Hub cho theo dõi migration tập trung
+    * Nghiên cứu Application Discovery Service cho dependency mapping
+    * Tìm hiểu Migration Evaluator cho phân tích chi phí và tính toán TCO
+    * Hiểu Server Migration Service (SMS) cho lift-and-shift migrations
+
+* Có kiến thức toàn diện về AWS Database Migration Service (DMS):
+    * Hiểu kiến trúc DMS: replication instances, endpoints, tasks
+    * Học sizing replication instance dựa trên yêu cầu workload
+    * Nghiên cứu homogeneous migrations (MySQL → RDS MySQL)
+    * Khám phá heterogeneous migrations (MySQL → Aurora PostgreSQL, Oracle → PostgreSQL)
+    * Tìm hiểu Schema Conversion Tool (SCT) cho schema transformation
+    * Hiểu Change Data Capture (CDC) cho continuous replication
+    * Học về migration task settings: full load, CDC, full load + CDC
+
+* Thực hiện thành công dự án migration cơ sở dữ liệu phức tạp:
+    * Thiết lập source MySQL 8.0 database trên EC2 với 50GB sample e-commerce data
+    * Tạo DMS replication instance (dms.t3.medium, Multi-AZ cho độ tin cậy)
+    * Cấu hình source endpoint với SSL/TLS encryption được bật
+    * Tạo target endpoint cho Aurora PostgreSQL 14 cluster
+    * Thiết kế migration task kết hợp full load và ongoing CDC
+    * Giám sát migration metrics: tables loaded, CDC latency, replication lag
+    * Xác thực tính toàn vẹn dữ liệu sử dụng row counts và checksum comparisons
+    * Thực hiện cutover: dừng writes, đồng bộ final changes, chuyển application
+    * Đạt zero-downtime migration với < 5 phút tạm dừng ứng dụng
+
+* Thành thạo nguyên tắc disaster recovery và giải pháp AWS:
+    * Hiểu Recovery Time Objective (RTO): thời gian downtime tối đa chấp nhận được
+    * Học Recovery Point Objective (RPO): mất dữ liệu tối đa chấp nhận được
+    * Nghiên cứu các mẫu kiến trúc DR:
+        - Backup & Restore (RPO/RTO cao nhất, chi phí thấp nhất)
+        - Pilot Light (tài nguyên chạy tối thiểu, RTO trung bình)
+        - Warm Standby (bản sao thu nhỏ, RTO thấp)
+        - Multi-Site Active-Active (RTO/RPO thấp nhất, chi phí cao nhất)
+    * Khám phá AWS Backup quản lý backup tập trung
+    * Tìm hiểu AWS Elastic Disaster Recovery (trước đây là CloudEndure)
+    * Học cross-region replication cho redundancy địa lý
+
+* Triển khai thành công giải pháp AWS Elastic Disaster Recovery:
+    * Cài đặt EDR replication agent trên production EC2 instances (web, app, database tiers)
+    * Cấu hình replication settings: target region (us-west-2), staging area subnet
+    * Định nghĩa recovery point objective: 15-minute RPO với continuous data replication
+    * Tạo recovery launch templates với instance types phù hợp
+    * Thiết lập recovery network configuration: VPC, subnets, security groups
+    * Thực thi DR drill simulation:
+        - Khởi động recovery trong môi trường cô lập
+        - Khởi chạy recovery instances từ recovery point mới nhất
+        - Xác thực chức năng ứng dụng và tính nhất quán dữ liệu
+        - Đo actual RTO: 12 phút từ khởi động đến recovery hoàn toàn
+    * Tài liệu hóa failback procedures cho việc quay lại primary region
+
+* Thiết kế và triển khai chiến lược backup toàn diện:
+    * Tạo AWS Backup vault với mã hóa AES-256
+    * Cấu hình cross-region backup copy đến secondary region cho bảo vệ địa lý
+    * Triển khai backup plans cho tài nguyên quan trọng:
+        - EC2 instances: daily snapshots, lưu trữ 30 ngày
+        - RDS databases: automated backups mỗi 6 giờ, lưu trữ 7 ngày
+        - DynamoDB tables: continuous backups với 35-day point-in-time recovery
+        - EBS volumes: hourly snapshots cho critical data volumes
+    * Thiết lập backup lifecycle policies cho tối ưu chi phí
+    * Cấu hình backup notifications qua SNS để giám sát
+    * Kiểm tra restore procedures để xác thực backup integrity
+
+* Phát triển tài liệu và quy trình disaster recovery:
+    * Tạo runbook chi tiết cho các tình huống kích hoạt DR
+    * Tài liệu hóa quy trình failover từng bước với decision trees
+    * Thiết kế recovery workflow diagrams sử dụng AWS architecture icons
+    * Chuẩn bị communication templates cho incident response
+    * Thiết lập recovery priority matrix cho applications
+    * Tài liệu hóa rollback procedures và failback strategies
+
+* Thực hiện testing và validation toàn diện:
+    * Thực thi tabletop DR exercise với các thành viên team
+    * Tiến hành technical failover drill và đo metrics
+    * Xác thực backup restore times trên các loại resource khác nhau
+    * Kiểm tra cross-region failover scenarios
+    * Tài liệu hóa gaps và cơ hội cải thiện
+
+* Đạt được mục tiêu business continuity:
+    * RTO giảm từ 4 giờ xuống 15 phút (cải thiện 93%)
+    * RPO giảm từ 24 giờ xuống 15 phút (cải thiện 99%)
+    * Tự động hóa 95% quy trình recovery
+    * Thiết lập continuous replication cho hệ thống quan trọng
+    * Triển khai kiến trúc resilience đa region
+
+* Chuẩn bị nền tảng cho Tuần 5: Infrastructure as Code với CloudFormation, Terraform và automation với Systems Manager và AWS Config.
+
+

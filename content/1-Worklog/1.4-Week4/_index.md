@@ -1,34 +1,59 @@
-
 ---
-title: "Worklog Week 4"
-weight: 4
+title: "Week 4 Worklog"
+weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
+{{% notice warning %}}
+⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
+{{% /notice %}}
+
 
 ### Week 4 Objectives:
 
-* **S3 Fundamentals:** Clearly understand the role, architecture, and durability of the **Amazon S3** (Simple Storage Service).
-* **Bucket Management & Security:** Be proficient in creating and managing **Buckets**, and implementing security policies like **Bucket Policy**.
-* **Storage Optimization:** Master S3's storage classes (**Standard, IA, Glacier**) and know how to use **Lifecycle Rules** for automated cost optimization.
-* **Practical Application:** Practice deploying a static website (**Static Website Hosting**) on S3.
+* Learn about AWS Lambda and serverless computing.
+* Understand API Gateway for building REST APIs.
+* Study SNS and SQS for messaging services.
 
-### Planned Tasks for the Week:
+### Tasks to be carried out this week:
+| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Learn Migration concepts (Lift & Shift, Replatform, Refactor) <br> - Introduction to AWS Database Migration Service (DMS)                                                                                                   | 29/09/2025 | 29/09/2025      | AWS Journey |
+| 3   | - Practice creating Replication Instance in DMS <br> - Configure source data (on-premise) and target (RDS) <br> - Perform test data migration                                              | 30/09/2025 | 30/09/2025      | AWS Journey |
+| 4   | - Introduction to Elastic Disaster Recovery (EDR) <br> - Learn how to set up replication server and recovery instance | 01/10/2025 | 01/10/2025      | AWS Journey |
+| 5   | - Practice simulating failures: shut down main EC2 and start recovery instance from EDR <br> - Evaluate recovery time (RTO/RPO)   <br>                            | 02/10/2025 | 02/10/2025      | AWS Journey |
+| 6   | - Create basic Disaster Recovery plan (backup, restore, failover) <br> - Write documentation summarizing Migration + DR processes <br> - Summarize Week 4 knowledge                                                                                     | 03/10/2025 | 03/10/2025      | AWS Journey |
 
-| Day | Task/Activity Focus | Start Date | Completion Date | Resource Material |
-| :-- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------- | :-------------- | :---------------------------------------- |
-| **Mon** | * Review and comprehend the fundamental architecture of **Amazon S3** (Object, Key, Bucket, Region). <br> * Learn about security features: Block Public Access, Access Control List (ACL). <br> * **Hands-on Practice:** Create a new S3 Bucket and customize Block Public Access settings. | 29/09/2025 | 29/09/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Tue** | * Explore S3's **Storage Classes** (Standard, Standard-IA, One Zone-IA, Glacier, Deep Archive). <br> * Understand **Lifecycle Rules** for automated transition between storage tiers. <br> * **Hands-on Practice:** Configure a Lifecycle Rule for the Bucket, transitioning old objects to Standard-IA. | 30/09/2025 | 30/09/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Wed** | * Study the **Versioning** feature and the procedure for object recovery. <br> * Learn about **Bucket Policy** for centralized access management. <br> * **Hands-on Practice:** Enable Versioning for the Bucket and attempt to delete/restore an object. | 01/10/2025 | 01/10/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Thu** | * Research the **Static Website Hosting** feature on S3. <br> * **Hands-on Practice:** <br>&emsp; + Upload HTML/CSS/JS files (Index.html & Error.html). <br>&emsp; + Enable Static Website Hosting and set up a Bucket Policy to allow public access. <br>&emsp; + Access the website via the S3 Endpoint. | 02/10/2025 | 02/10/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Fri** | * **Cleanup and S3 CLI Review:** <br> * **Hands-on Practice:** <br>&emsp; + Use **AWS CLI** to upload/download/sync data with S3 (`aws s3 cp`, `aws s3 sync`). <br>&emsp; + **Resource Cleanup:** Disable Versioning, delete all objects (including old versions), and then delete the Bucket. | 03/10/2025 | 03/10/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
 
 ### Week 4 Achievements:
 
-* **Comprehensive S3 Management:** Clearly understood, created, configured, and managed S3 Buckets. Grasped the roles of **Block Public Access** and **ACL**.
-* **Storage Cost Optimization:** Mastered S3's **Storage Classes** and know how to use **Lifecycle Rules** to automatically transition data to less expensive tiers over time.
-* **Security and Data Governance:** Successfully practiced enabling/disabling **Versioning** and applying **Bucket Policy** to control public and IAM User access.
-* **Practical Application:** Successfully deployed a static website on S3 and accessed it via the public Endpoint.
-* **CLI Proficiency:** Proficiently used the AWS CLI for efficient data management on S3 (upload, download, sync).
+* Learned about serverless computing and benefits:
+    * No server management required
+    * Pay only for execution time
+    * Automatic scaling
 
----
+* Created Lambda functions using Python:
+    * Basic hello world function
+    * Function with environment variables
+    * Tested with different event sources
+
+* Configured Lambda settings:
+    * Timeout (default 3 seconds)
+    * Memory allocation
+    * Execution role with basic permissions
+
+* Built REST API with API Gateway:
+    * Created simple GET/POST endpoints
+    * Connected API to Lambda backend
+    * Tested API calls using browser and Postman
+
+* Practiced with SNS:
+    * Created SNS topic
+    * Added email subscription
+    * Sent test notifications
+
+* Worked with SQS:
+    * Created standard queue
+    * Sent messages to queue
+    * Retrieved and deleted messages from queue
+    * Understood message retention

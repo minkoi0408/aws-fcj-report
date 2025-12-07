@@ -1,30 +1,69 @@
 ---
 title: "Worklog Tuần 11"
-weight: 11
+date: "`r Sys.Date()`"
+weight: 2
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
+{{% notice warning %}}
+⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
+{{% /notice %}}
 
-### Mục tiêu Tuần 11:
 
-* **Bảo vệ Vành đai:** Hiểu rõ vai trò của **AWS WAF** (Web Application Firewall) và **AWS Shield** trong việc bảo vệ ứng dụng khỏi các cuộc tấn công Lớp 7 (WAF) và DDoS (Shield).
-* **Phát hiện Mối đe dọa:** Nắm vững cơ chế hoạt động và lợi ích của dịch vụ phát hiện mối đe dọa thông minh **Amazon GuardDuty**.
-* **Nguyên tắc Bảo mật:** Ôn tập và áp dụng các nguyên tắc bảo mật nâng cao như **IAM Policy Best Practices** và **Secrets Management**.
-* **Thực hành Cấu hình:** Thực hành cấu hình các Rule bảo mật cơ bản trên WAF và kích hoạt GuardDuty.
+### Mục tiêu tuần 11:
 
-### Kế hoạch Triển khai trong Tuần:
+* Tìm hiểu về các khái niệm Modernization và Serverless.
+* Hiểu về kiến trúc monolithic và microservices.
+* Thực hành xây dựng ứng dụng serverless với Lambda, API Gateway và các dịch vụ AWS khác.
 
-| Thứ | Hoạt động Trọng tâm | Ngày Bắt đầu | Ngày Hoàn thành | Tài liệu Tham khảo |
-| :-- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------- | :-------------- | :---------------------------------------- |
-| **Hai** | * Đọc và hiểu kiến trúc **AWS WAF** và **Web ACL** (Access Control List). <br> * Tìm hiểu về các loại tấn công Lớp 7 (SQL Injection, XSS) mà WAF bảo vệ. <br> * **Thực hành:** Tạo một Web ACL và tìm hiểu các Managed Rule Group. | 17/11/2025 | 17/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
-| **Ba** | * Tìm hiểu về **AWS Shield Standard/Advanced** (DDoS Protection) và cách nó tích hợp với WAF/Route 53. <br> * **Thực hành WAF:** <br>&emsp; + Tạo một Rule dựa trên Rate-based (giới hạn tần suất truy cập). <br>&emsp; + Thử nghiệm chặn các IP cụ thể (IP Set) qua WAF. | 18/11/2025 | 18/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
-| **Tư** | * Tìm hiểu về dịch vụ phát hiện mối đe dọa **Amazon GuardDuty** (sử dụng Machine Learning). <br> * **Thực hành:** Kích hoạt GuardDuty và xem xét các mẫu Findings (mối đe dọa giả định) để hiểu cách dịch vụ cảnh báo. | 19/11/2025 | 19/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
-| **Năm** | * Ôn tập và áp dụng **IAM Policy Best Practices** (Nguyên tắc Đặc quyền Tối thiểu - Least Privilege). <br> * Tìm hiểu về **AWS Secrets Manager** (tự động xoay vòng credentials) và **AWS Systems Manager Parameter Store** (lưu trữ cấu hình). <br> * **Thực hành:** Xem xét lại các IAM Policy đã tạo trong tuần 2. | 20/11/2025 | 20/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
-| **Sáu** | * **Tổng hợp & Dọn dẹp Tài nguyên:** <br> * **Thực hành:** <br>&emsp; + Xóa Web ACL/WAF Rules. <br>&emsp; + **Vô hiệu hóa GuardDuty**. <br>&emsp; + Tổng kết các biện pháp bảo mật (Perimeter Security, Monitoring, Secrets Management) đã học. | 21/11/2025 | 21/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc cần triển khai trong tuần này:
+| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
+| 2   | - Giới thiệu về các khái niệm Modernization và Serverless <br> - So sánh kiến trúc monolithic và microservices <br> - Phân tích lợi ích của việc chuyển đổi sang serverless                                                                                             | 17/11/2025   | 17/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Thực hành AWS Lambda: tạo function, cấu hình trigger, xem log trong CloudWatch <br> - Triển khai logic xử lý API cơ bản sử dụng Lambda                                                           | 18/11/2025   | 18/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Tích hợp API Gateway với Lambda để tạo REST API <br> - Kết nối dữ liệu với DynamoDB (các thao tác CRUD) <br> - Kiểm tra API bằng Postman                                                           | 19/11/2025   | 19/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Cấu hình Cognito để xác thực người dùng (user pool, token) <br> - Tích hợp xác thực Cognito vào API Gateway <br> - Quản lý quyền truy cập thông qua IAM Role                                                           | 20/11/2025   | 20/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - Thực hành triển khai ứng dụng Serverless hoàn chỉnh bằng AWS SAM (Serverless Application Model) <br> - Testing, logging và tối ưu hóa hiệu suất <br> - Tổng hợp kiến thức và báo cáo tuần                                                           | 21/11/2025   | 21/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
-### Kết quả Đạt được Tuần 11:
 
-* **Bảo vệ Vành đai:** Hiểu rõ cách WAF và Shield hoạt động ở rìa mạng (Edge) để bảo vệ các tài nguyên như CloudFront, ALB.
-* **Phát hiện Mối đe dọa:** Thành thạo việc kích hoạt và theo dõi các cảnh báo từ **GuardDuty** để phát hiện các hành vi đáng ngờ trong tài khoản AWS.
-* **Quản lý Danh tính:** Củng cố kiến thức về **IAM Policy** và hiểu tầm quan trọng của việc quản lý bí mật (Secrets Management) bằng các dịch vụ chuyên dụng.
-* **Xây dựng Bảo mật:** Nắm được cách tích hợp các dịch vụ bảo mật vào kiến trúc ứng dụng (ví dụ: dùng WAF trước ALB) và nguyên tắc bảo mật đa lớp.
+
+### Kết quả đạt được tuần 11:
+
+* Hiểu về Kiến trúc Serverless:
+    * Tìm hiểu các khái niệm và lợi ích của serverless
+    * So sánh kiến trúc monolithic và microservices
+    * Nghiên cứu ưu điểm của serverless:
+        * Không cần quản lý server
+        * Tự động mở rộng quy mô
+        * Tính phí theo mức sử dụng
+        * Thời gian đưa sản phẩm ra thị trường nhanh hơn
+
+* Thực hành AWS Lambda:
+    * Tạo Lambda function sử dụng Python
+    * Cấu hình trigger cho function (API Gateway, S3, CloudWatch Events)
+    * Xem execution log trong CloudWatch
+    * Thiết lập biến môi trường và timeout
+    * Triển khai logic xử lý API cơ bản
+
+* Xây dựng REST API với API Gateway và Lambda:
+    * Tạo REST API sử dụng API Gateway
+    * Tích hợp Lambda function làm backend
+    * Thực hiện các thao tác CRUD với DynamoDB
+    * Kiểm tra API endpoint bằng Postman
+    * Cấu hình request/response mapping
+
+* Triển khai Xác thực với Cognito:
+    * Tạo Cognito User Pool
+    * Cấu hình luồng xác thực người dùng
+    * Tích hợp Cognito với API Gateway
+    * Sử dụng JWT token để ủy quyền
+    * Quản lý IAM role cho kiểm soát truy cập
+
+* Triển khai Ứng dụng Serverless:
+    * Tìm hiểu cơ bản về AWS SAM framework
+    * Tạo SAM template (template.yaml)
+    * Triển khai ứng dụng serverless hoàn chỉnh bằng SAM CLI
+    * Kiểm tra chức năng ứng dụng
+    * Xem lại CloudWatch log để giám sát
+
+

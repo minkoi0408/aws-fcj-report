@@ -1,33 +1,111 @@
-
 ---
-title: "Worklog Week 3"
-weight: 3
+title: "Week 3 Worklog"
+weight: 1
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
+{{% notice warning %}}
+⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
+{{% /notice %}}
+
 
 ### Week 3 Objectives:
 
-* **VPC Architecture:** Clearly understand the role and core components of the **Amazon Virtual Private Cloud (VPC)** networking service.
-* **Network Configuration:** Be proficient in creating and configuring a custom VPC, Subnets (Public/Private), Internet Gateway (IGW), and Route Tables.
-* **Multi-Layer Security:** Master the two-layer security mechanisms: **Security Group (SG)** and **Network Access Control List (NACL)**.
-* **Deployment Practice:** Successfully deploy an EC2 Instance within a custom VPC environment.
+* Learn about Amazon RDS for managed databases.
+* Understand AWS Lambda and serverless basics.
+* Study CloudWatch for monitoring and logging.
 
-### Planned Tasks for the Week:
+### Tasks to be carried out this week:
+| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Introduction to CDN concepts and CloudFront benefits <br> - Create CloudFront Distribution to distribute S3 website content | 22/09/2025 | 22/09/2025      | AWS Journey |
+| 3   | - Configure CloudFront behavior and cache policy <br> - Test website access via CloudFront URL <br> - Perform invalidation to update new content | 23/09/2025 | 23/09/2025      | AWS Journey |
+| 4   | - Introduction to DynamoDB (NoSQL Database) <br> - Create DynamoDB tables (Users, Products, etc.) <br> - Practice CRUD operations on Console | 24/09/2025 | 24/09/2025      | AWS Journey |
+| 5   | - Connect and query DynamoDB using AWS CLI <br> - Write small scripts to add and read data from tables | 25/09/2025 | 25/09/2025      | AWS Journey |
+| 6   | - Learn about ElastiCache (Redis & Memcached) <br> - Create basic Redis cluster <br> - Test connection from EC2 to store and read cache data | 26/09/2025 | 26/09/2025      | AWS Journey |
 
-| Day | Task/Activity Focus | Start Date | Completion Date | Resource Material |
-| :-- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------- | :-------------- | :---------------------------------------- |
-| **Mon** | * Review and comprehend **VPC Architecture**: Concepts of IP, CIDR Block, Subnet, and Availability Zone (AZ). <br> * **Hands-on Practice:** Create a new VPC with a custom CIDR range (e.g., `10.0.0.0/16`). <br> * Create two Subnets: one Public and one Private. | 22/09/2025 | 22/09/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Tue** | * Study **Internet Gateway (IGW)**, **Route Table**, and their roles in providing Internet access. <br> * **Hands-on Practice:** <br>&emsp; + Create and attach the IGW to the VPC. <br>&emsp; + Configure the **Public Route Table** to route traffic to the IGW. <br>&emsp; + Associate the Public Route Table with the Public Subnet. | 23/09/2025 | 23/09/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Wed** | * Learn about the **Security Group (SG)** (Stateful) security mechanism and its operational principles. <br> * **Hands-on Practice:** <br>&emsp; + Launch an EC2 Instance into the Public Subnet. <br>&emsp; + Configure the SG to only allow SSH/RDP (Port 22/3389) from a personal IP address. <br>&emsp; + Test connectivity to validate SG security features. | 24/09/2025 | 24/09/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Thu** | * Learn about the **Network Access Control List (NACL)** (Stateless) security mechanism. <br> * **Hands-on Practice:** <br>&emsp; + Configure NACL for the Public Subnet (experiment with a Deny rule). <br>&emsp; + Detail the differences in inbound/outbound processing between SG and NACL. <br>&emsp; + Research the concept of NAT Gateway (its role in the Private Subnet). | 25/09/2025 | 25/09/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Fri** | * **Cleanup & Comprehensive Review:** <br> * **Hands-on Practice:** <br>&emsp; + **Terminate** the EC2 Instance. <br>&emsp; + **Delete all created VPC components** in the correct sequence (Detach IGW -> Delete Subnets -> Delete Route Tables -> Delete VPC) for cost optimization. <br>&emsp; + Summarize the learned VPC components and their functionalities. | 26/09/2025 | 26/09/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
 
 ### Week 3 Achievements:
 
-* **Complete VPC Configuration:** Successfully understood and manually created a VPC, Subnets (Public/Private), Internet Gateway, and Route Tables to direct network traffic.
-* **Network Layer Security:** Fully grasp and distinguish between the two security layers: **Security Group** (Stateful, operates at the Instance level) and **NACL** (Stateless, operates at the Subnet level).
-* **Basic Deployment:** Successfully deployed an EC2 Instance within the custom VPC and confirmed Internet access capability.
-* **Resource Cleanup Proficiency:** Successfully performed network resource cleanup in the correct order, ensuring efficient cost management.
+* **Learned about Amazon RDS:**
+    * Understood RDS as managed database service
+    * Learned benefits of managed databases:
+        * Automated backups
+        * Automatic updates
+        * Easy scaling
+    * Studied database engines:
+        * MySQL - popular for web applications
+        * PostgreSQL - advanced features
+    * Understood Multi-AZ for high availability
+    * Learned about Read Replicas for scaling
 
----
+* **Practiced with RDS:**
+    * Created RDS MySQL instance (db.t3.micro)
+    * Configured security groups for database access
+    * Connected to RDS from EC2 instance:
+      ```bash
+      mysql -h mydb.ap-southeast-1.rds.amazonaws.com -u admin -p
+      ```
+    * Created sample database and tables
+    * Configured automated backups
+    * Tested snapshot creation and restore
+    * Monitored database metrics in CloudWatch
+
+* **Understood AWS Lambda basics:**
+    * Learned serverless computing concept:
+        * No server management
+        * Auto scaling
+        * Pay per use
+    * Understood Lambda function structure:
+        * Handler function
+        * Event input
+        * Execution role
+    * Studied Lambda triggers:
+        * S3 events
+        * API Gateway
+        * CloudWatch Events
+    * Learned Lambda limitations:
+        * 15-minute timeout
+        * Memory limits
+
+* **Practiced with Lambda:**
+    * Created Lambda function in Python:
+      ```python
+      def lambda_handler(event, context):
+          return {
+              'statusCode': 200,
+              'body': 'Hello from Lambda!'
+          }
+      ```
+    * Configured IAM execution role
+    * Set up S3 trigger for image processing
+    * Tested function execution
+    * Monitored logs in CloudWatch
+    * Analyzed function performance
+
+* **Learned CloudWatch monitoring:**
+    * Understood CloudWatch components:
+        * Metrics - performance data
+        * Logs - application logs
+        * Alarms - automated alerts
+    * Learned about metric types:
+        * EC2 metrics (CPU, disk, network)
+        * RDS metrics (connections, storage)
+        * Lambda metrics (invocations, errors)
+
+* **Practiced with CloudWatch:**
+    * Created alarms for EC2 instances:
+        * High CPU usage
+        * Low disk space
+    * Set up alarms for RDS:
+        * High connections
+        * Low storage
+    * Viewed and analyzed CloudWatch Logs
+    * Built simple dashboard for monitoring
+    * Configured log retention policies
+
+* **Gained practical experience:**
+    * Can set up and manage RDS databases
+    * Understand serverless with Lambda
+    * Know how to monitor with CloudWatch
+    * Ready for Week 4 advanced topics

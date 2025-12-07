@@ -1,32 +1,63 @@
 ---
-title: "Worklog Week 10"
-weight: 10
+title: "Week 10 Worklog"
+weight: 2
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
+{{% notice warning %}}
+⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
+{{% /notice %}}
+
 
 ### Week 10 Objectives:
 
-* **Message Queuing:** Clearly understand the role and operation of the **Amazon Simple Queue Service (SQS)** message queuing service (Standard & FIFO).
-* **Pub/Sub Architecture:** Master the **Publish/Subscribe** architecture using the **Amazon Simple Notification Service (SNS)** notification service.
-* **Workflow Orchestration:** Be proficient in creating and configuring **AWS Step Functions** state machines to coordinate AWS services.
-* **Integration Practice:** Practice building an asynchronous workflow using SQS, SNS, and Lambda.
+* Learn about AWS security best practices.
+* Understand monitoring and compliance tools.
+* Practice implementing security controls.
 
-### Planned Tasks for the Week:
+### Tasks to be carried out this week:
+| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Overview of AI/ML on AWS <br> - Learn about ML support services: SageMaker, Rekognition, Comprehend, Kendra, Translate, Polly                                                                                                              | 10/11/2025 | 10/11/2025      | AWS Journey               |
+| 3   | - Practice with Amazon SageMaker: <br>&emsp; + Create Notebook Instance <br>&emsp; + Train simple models (Linear Regression / Image Classification) <br>&emsp; + Deploy endpoint and test predictions                                                                                      | 11/11/2025 | 11/11/2025      | AWS Journey                     |
+| 4   | - Get familiar with Amazon Rekognition <br> - Demo face and object recognition in images/videos <br> - Integrate Rekognition API into a small web application                                                                                | 12/11/2025 | 12/11/2025      | AWS Journey                 |
+| 5   | - Practice Amazon Comprehend (natural language processing) <br> - Experiment with Amazon Kendra (contextual intelligent search) <br> - Compare advantages and limitations of each service                                                                             | 13/11/2025 | 13/11/2025      | AWS Journey               |
+| 6   | - Summarize Week 10 knowledge: <br>&emsp; + AI/ML model development process on AWS <br>&emsp; + Real-world applications of AI/ML in business <br>&emsp; + Write practice results report and expansion directions                                        | 14/11/2025 | 14/11/2025      | AWS Journey                            |
 
-| Day | Task/Activity Focus | Start Date | Completion Date | Resource Material |
-| :-- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------- | :-------------- | :---------------------------------------- |
-| **Mon** | * Review and comprehend **Amazon SQS** architecture (Message Queue) and the difference between Standard and FIFO Queues. <br> * **Hands-on Practice:** Create an SQS Standard Queue, manually send, and receive messages via the Console. | 10/11/2025 | 10/11/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Tue** | * Study the **Amazon SNS** notification service (Topic, Subscriber) and the Pub/Sub model. <br> * **Hands-on Practice:** <br>&emsp; + Create an SNS Topic. <br>&emsp; + Create an SQS Queue and a Lambda function (from Week 8) as Subscribers to the Topic. <br>&emsp; + Publish a message to the Topic and verify delivery to SQS/Lambda. | 11/11/2025 | 11/11/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Wed** | * Learn about **AWS Step Functions** (State Machine, Task State, Choice State). <br> * **Hands-on Practice:** <br>&emsp; + Create a new Lambda function (e.g., `ProcessStep1`). <br>&emsp; + Create a simple State Machine (with a single Task step) to orchestrate and invoke this Lambda function. | 12/11/2025 | 12/11/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Thu** | * Study how **Step Functions** orchestrate complex logical flows (Sequence, Choice, Parallel). <br> * **Hands-on Practice:** Extend the created State Machine: <br>&emsp; + Add a `Choice` step based on the input result. <br>&emsp; + Integrate SQS (e.g., send a message to a queue if the flow follows a specific path). | 13/11/2025 | 13/11/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
-| **Fri** | * **Resource Cleanup & Overall Integration Review:** <br> * **Hands-on Practice:** <br>&emsp; + Delete the State Machine, SQS Queue, and SNS Topic. <br>&emsp; + Review how these services (SQS, SNS, Step Functions) solve asynchronous communication and application decoupling challenges. | 14/11/2025 | 14/11/2025 | [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) |
 
 ### Week 10 Achievements:
 
-* **Message Queuing:** Clearly understood the role of SQS in application **decoupling** and **load leveling** (buffering). Proficient in sending/receiving messages via SQS.
-* **Pub/Sub Model:** Mastered the **SNS** mechanism for efficiently and reliably distributing messages to multiple subscribers.
-* **Workflow Orchestration:** Clearly understood how **Step Functions** coordinates other AWS services into an organized, failure-manageable, and easily monitored workflow.
-* **Asynchronous System Building:** Capable of designing application architectures using these integration services to enhance flexibility and scalability.
+* Learned about AWS security:
+    * Understood shared responsibility model
+    * Reviewed AWS security best practices
+    * Studied security pillar of Well-Architected Framework
 
----
+* Worked with AWS CloudTrail:
+    * Enabled CloudTrail in AWS account
+    * Configured trail to log to S3 bucket
+    * Reviewed API call history
+    * Viewed events in CloudTrail console
+    * Understood log file format
+
+* Practiced with AWS Config:
+    * Enabled AWS Config service
+    * Set up Config rules for compliance:
+        * Check for encrypted EBS volumes
+        * Verify S3 bucket versioning
+        * Check IAM password policy
+    * Reviewed compliance dashboard
+    * Viewed non-compliant resources
+
+* Used AWS GuardDuty:
+    * Enabled GuardDuty for threat detection
+    * Reviewed finding types
+    * Viewed sample findings
+    * Understood severity levels (Low, Medium, High)
+    * Learned about common threats detected
+
+* Explored AWS Security Hub:
+    * Enabled Security Hub
+    * Viewed consolidated security findings
+    * Reviewed security scores
+    * Understood integration with GuardDuty and Config
+    * Exported findings report
