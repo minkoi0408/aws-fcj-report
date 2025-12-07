@@ -1,6 +1,5 @@
 ---
 title : "Tạo Interface VPC Endpoint cho Truy Cập S3"
-date : "`r Sys.Date()`"
 weight : 2
 chapter : false
 pre : " <b> 5.4.2 </b> "

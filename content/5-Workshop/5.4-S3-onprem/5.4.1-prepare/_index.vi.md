@@ -1,6 +1,5 @@
 ---
 title : "Chuẩn Bị Môi Trường cho Kết Nối Hybrid"
-date : "`r Sys.Date()`"
 weight : 1
 chapter : false
 pre : " <b> 5.4.1 </b> "

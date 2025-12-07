@@ -1,6 +1,5 @@
 ---
 title : "Environment Preparation for Hybrid Connectivity"
-date : "`r Sys.Date()`"
 weight : 1
 chapter : false
 pre : " <b> 5.4.1 </b> "

@@ -1,6 +1,5 @@
 ---
 title : "Implementing Fine-Grained Access Control with VPC Endpoint Policies"
-date : "`r Sys.Date()`"
 weight : 5
 chapter : false
 pre : " <b> 5.5. </b> "
