@@ -1,6 +1,6 @@
 ---
 title: "Tự Đánh Giá"
-weight: 6
+hweight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
