@@ -13,6 +13,9 @@ pre: " <b> 2. </b> "
 # Nền tảng Devteria Game Store
 ## Giải pháp E-commerce trên AWS Cloud cho phân phối game số
 
+[Devteria Shop Game Project With AWS (Word)](/AWS_Project_Plan_Devteria.docx)
+
+
 ### 1. Tóm tắt điều hành
 Devteria Game Store là nền tảng thương mại điện tử có khả năng mở rộng dành cho việc mua và quản lý bản quyền game kỹ thuật số. Được xây dựng trên AWS cloud, nền tảng cung cấp xác thực bảo mật, quản lý tồn kho thời gian thực, xử lý đơn hàng tự động và phân phối nội dung toàn cầu. Hỗ trợ hàng nghìn người dùng đồng thời với độ sẵn sàng cao (99.9% uptime) và hiệu quả chi phí thông qua kiến trúc serverless.
 
