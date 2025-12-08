@@ -14,7 +14,8 @@ pre: " <b> 2. </b> "
 ## AWS Cloud E-commerce Solution for Digital Game Distribution
 ## 📄 Project Proposal Document
 
-[Devteria Shop Game Project With AWS (Word)](/images/AWS_Project_Plan_Devteria.docx)
+[Devteria Shop Game Project With AWS (Word)]({{ "/images/AWS_Project_Plan_Devteria.docx" | relURL }})
+
 
 ### 1. Executive Summary
 Devteria Game Store is a scalable e-commerce platform for digital game licensing. Built on AWS, it delivers secure authentication, real-time inventory, automated order processing, and global content delivery. Supports thousands of concurrent users with 99.9% uptime and cost efficiency through serverless architecture.
