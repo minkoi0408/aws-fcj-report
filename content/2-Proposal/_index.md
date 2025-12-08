@@ -14,7 +14,8 @@ pre: " <b> 2. </b> "
 ## AWS Cloud E-commerce Solution for Digital Game Distribution
 ## 📄 Project Proposal Document
 
-[Devteria Shop Game Project With AWS (Word)]({{ "/images/AWS_Project_Plan_Devteria.docx" | relURL }})
+[Devteria Shop Game Project With AWS (Word)](/AWS_Project_Plan_Devteria.docx)
+
 
 
 ### 1. Executive Summary
